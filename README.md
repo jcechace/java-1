@@ -31,7 +31,20 @@ Náplň lekcí
 Termíny jednotlivých lekcí
 --------------------------
 
-Kurz probíhá typicky jednou týdně. Pro každý běh kurzu budou upřesněna konkrétní data jednotlivých lekcí.
+Kurz probíhá jednou týdně, vždy v úterý od 18.00 do 20.30, a to v následujících datech:
+
+* 20\. 3\. 2018
+* 27\. 3\. 2018
+* 3\. 4\. 2018
+* 10\. 4\. 2018
+* 17\. 4\. 2018
+* 24\. 4\. 2018
+* 1\. 5\. 2018 (Svátek, kurz bude)
+* 8\. 5\. 2018 (Svátek, kurz bude)
+* 15\. 5\. 2018
+* 22\. 5\. 2018
+* 29\. 5\. 2018
+
 
 Je opravdu důležité, abyste mohly přijít na všechny hodiny.
 
