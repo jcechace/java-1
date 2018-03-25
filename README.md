@@ -21,7 +21,7 @@ Náplň lekcí
 -----------
 
 1. [Puzzle - recept na bublaninu](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jcechace/java-1/tree/jaro18-brno/Lekce01)
-1. Bludiště Angry birds
+1. [Bludiště Angry birds](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/jcechace/java-1/tree/jaro18-brno/Lekce02)
 1. Nejjednodušší aplikace v Javě
 1. Okenní aplikace, události
 1. Použití existujících metody
