@@ -50,6 +50,6 @@ Kurz probíhá jednou týdně, vždy v úterý od 18.00 do 20.30, a to v násled
 Je opravdu důležité, abyste mohly přijít na všechny hodiny.
 
 Druhou zásadní podmínkou jsou domácí úkoly. Budete dostávat domácí úkol na většině lekcí, proto počítej, že mimo času
-lekce (ve čtvrtek večer) bude třeba věnovat kurzu ještě několik hodin, například o víkendu. Domácí úkoly se ukázaly jako
+lekce (v úterý večer) bude třeba věnovat kurzu ještě několik hodin, například o víkendu. Domácí úkoly se ukázaly jako
 nejefektivnější způsob, jak se látku naučit. Máte čas s Javou pořádně experimentovat, řešit problémy a musíte si s nimi
 poradit. Je dokonce možné řešit úkoly ve dvojici. My vám rádi pomůžeme přes Facebook, Skype, osobně...
