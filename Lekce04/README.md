@@ -1,7 +1,7 @@
 Lekce 04
 ========
 
-Želví závody a knihovna zelva.jar
+Opakování & Něco navíc
 ---------------------------------
 
 ### Videozáznam
