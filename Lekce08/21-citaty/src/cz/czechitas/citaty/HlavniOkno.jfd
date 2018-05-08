@@ -1,0 +1,120 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_112-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+			"$layoutConstraints": "insets rel,hidemode 3"
+			"$columnConstraints": "[fill][left][fill][fill][grow,fill]"
+			"$rowConstraints": "[fill][][][grow][][]"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 2
+			"title": "Prohlížeč citátů"
+			"$locationPolicy": 1
+			auxiliary() {
+				"JavaCodeGenerator.postInitCode": "this.contentPane = (JPanel) this.getContentPane();\nthis.contentPane.setBackground(this.getBackground());\nLayoutManager layout = this.contentPane.getLayout();\nif (layout instanceof MigLayout) {\n    this.migLayoutManager = (MigLayout) layout;\n}\n"
+			}
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnNahodnyCitat"
+				"text": "Náhodný citát"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "stisknutoNahodnyCitat", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 0 2 1"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnAutoruvCitat"
+				"text": "Náhodný od autora"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "stisknutoNahodnyiAutoruvCitat", true ) )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 0 2 1"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "chckOblibeny"
+				"text": "Oblíbený"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 4 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labAutorTitle"
+				"text": "Autor"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1,alignx center,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labAutor"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 1 3 1,alignx left,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labCitatTitle"
+				"text": "Citat"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 2,alignx center,growx 0"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "txtCitat"
+					"lineWrap": true
+					"columns": 60
+					"rows": 20
+					"editable": false
+				} )
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 2 4 2,grow"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labPocetCitatuCelkemTitle"
+				"text": "Citátů celkem:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 5"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labPocetCitatuCelkem"
+				"text": "0"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 5,alignx left,growx 0"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labPocetAutoruTitle"
+				"text": "| Celkem Autorů:"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 5"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "labPocetAutoru"
+				"text": "0"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 5"
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuHlavni"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menuSoubor"
+					"text": "Soubor"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuOtevritSoubor"
+						"text": "Otevřít"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuNacistSoubor", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuUlozitSoubor"
+						"text": "Uložit"
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menuZobrazit"
+					"text": "Zobrazit"
+					add( new FormComponent( "javax.swing.JCheckBoxMenuItem" ) {
+						name: "menuPouzeOblibene"
+						"text": "Pouze Oblíbené"
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 700, 450 )
+		} )
+	}
+}
