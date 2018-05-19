@@ -1,72 +1,101 @@
-Lekce 09
-========
+# Domácí úkol č. 6
 
-Ping Pong a Bludiště
---------------------
+Při programování se snažte vyhýbat opakování kódu vhodným využíváním metod.
 
-### Osnova
+Například si budete moci věimnout, že všechny metody pro zobrazení náhodného citátu (ze všech, od autora, oblíbeného) fungují tak, že nejprve vyberou vhodné citáty ze zdroje (například všechny od urřitého autora) a následně v druhém kroku z této části vyberou náhodný citát. Právě druhý krok bude stejný pro všechny metody zobrazující náhodný citát.
 
-1. Oživení Ping Pongu z minula
-1. Přidání labelu reprezentujícího hráče
-1. Událost KeyListener.keyPressed
-1. Kolize objektů (dvou labelů) na obrazovce
-1. Bludiště
+## Náhodný citát od autora
+- Tlačítko po kliknuti zobrazí náhodný citát od stejného autora jako aktuálně zobrazený citát.
 
-### Videozáznam
+### Tip
+Kromě klasického for cyklu existuje i speciální varianta pro procházení prvků v seznamech.
 
-Na YouTube se můžete podívat na [záznam z lekce](https://www.youtube.com/watch?v=QybpXg5PAXo),
-případně si prohlédnout [celý playlist](https://www.youtube.com/playlist?list=PLUVJxzuCt9AROpKl3Hu-DvdgQV-xHaoQY).
+```java
+List<String> texty;
 
-Úkol 09 - Ping Pong a Bludiště
-------------------------------
+for (String text : texty) {
+    // Tady muzu udelat neco s jednolivymi objekty ze seznamu
+    System.out.printl(text);
+}
+```
 
-Cílem domácího úkolu je dokončit aplikace z hodiny.
+## Ukazatel počtu autorů
+ - Vedle celkového počtu citátu zobraz i počet autorů v aktuálním zdroji citátů.
 
-### Část 1 - Ping Pong
+### Tip
+Z hodiny znáte datovou strukturu seznam (``List``) a víte jak s ním pracovat.
 
-V hodině jsme programovali Pong (naši verzi první počítačové hry na světě, 1972, wikipedia).
+```java
+    List<String> jmena = new ArrayList();
+    jmena.add("Jakub");
+    jmena.add("Jakub");
+    jmena.add("Honzik");
+    jmena.add("Anicka");
 
-Dokončete Pong tak, aby uměl např. tyto věci: (toto je pouze seznam návrhů, který je doporučený).
+    int pocet = jmena.size();
 
-* Hráči se ovládají pomocí W/S a šipky nahoru/dolů.
-* Míček se odráží od horní a dolní stěny, ale ne od bočních změn.
-* Míček se odráží od hráčů (s použitím kolize objektů).
-* Pokud hráč nezachytí míček a uteče mu za okraj, protihráč dostane bod.
-* Pokud se míček pohybuje s úhlem a rychlostí (ne napevno 45°), můžete složit hráče z více labelů (horní část, střední
-  část a spodní část) a měnit odrazový úhel podle části, do které míček narazil.
-* S přibývajícími body můžete míček zrychlovat.
+    // vypise 4 (V seznamu jsou dva Jakubove, jedna Anicka, a Honzik)
+    System.out.println(pocet);
 
-Poznámka: Klávesy mají čísla, ale místo konkrétních čísel je doporučeno používat předpřipravené konstanty:
+    // prvky v seznamu maji urcene poradi. Anicka je 3. v seznamu
+    System.out.println(jmena.get(3))
 
-    if (kodKlavesy == 38) {
-        // pohyb nahoru
+    // Muzeme pouzit for-each
+    for (String jmeno : jmena) {
+        // Postupne vypise vsechna jmena (poradi bude pokazde stejne).
+        System.out.printl(jmeno);
     }
+```
 
-    // Lepší verze:
-    if (kodKlavesy == KeyEvent.VK_UP) {
-        // pohyb nahoru
+Kromě seznamu má Java i datovou strukturu jménem množina (``Set``). Od seznamu se liší tím, že prvky v ní nemají pořadí. Další rozdíl je, že prvky v množině jsou unikátní.
+
+```java
+    Set<String> jmena = new HashSet();
+    mena.add("Jakub");
+    jmena.add("Jakub");
+    jmena.add("Honzik");
+    jmena.add("Anicka");
+
+    int pocet = jmena.size();
+
+    // vypise 3 (V seznamu jsou 3 unikatni jmena: Jakub, Anicka, Honzik)
+    System.out.println(pocet);
+
+    // Prvky v mnozine nemaji poradi, nasledujici radek nebude fungovat
+    System.out.println(jmena.get(3));
+
+    // Ale muzeme pouzit for-each
+    for (String jmeno : jmena) {
+        // Postupne vypise vsechna jmena (poradi muze byt pokazde ruzne)
+        System.out.printl(jmeno);
     }
+```
 
-### Část 2 - Bludiště
+## Označ citát jako oblibený
+- Do třídy ``Citat`` přidejte atribut typu ``boolean`` jménem ``oblibene``.
+  - pro tento atribut vytvořte metodu ``isObliblene`` vracející jeho hodnotu
+  - pro tento atribut vytvořte pro tento atribut vytvořte metody ``public void setOblibene(boolean oblibene)`` nastavující jeho hodnotu
+  - při zobrazení citátu by měl stav checkboxu ``chckOblibene`` odpovidat hodnotě atributu v objektu citátu
+  - implementuj akci, která umožní pomocí checkboxu ``chckOblibene`` oznařit citát za oblíbený
+  - výchozí hodnota atributu ``oblibene`` by měla být ``false`` pokud není známá jiná hodnota.
 
-Aplikace, ve které ovládáte robota a úkolem je projít bludiště. I zde je seznam nápadů, které by appka mohla mít. Není
-zdaleka úplný ani povinný.
+  V souboru citaty.txt je každý citát uložen na 3 řádky.
+  Druhý řádek v trojici má hodnotu ``1`` pokud je citát oblíbený,nebo ``0`` pokud není. Zohledněte tuto hodnotu při načítání Citatu ze souboru.
 
-Pár tipů:
+## Zobraz náhodný oblibený citát
+Do Aplikace přidejte tlačítko, které po kliknutí zobrazí náhodný oblibený citát
 
-* Nejprve napište pohyb robota pomocí šipek v prázném okně.
-* Potom přidejte bludiště.
-* Při pohybu robota (priStiskuKlavesy) posuňte robota, testujte kolizi s každou zdí a pokud ke kolizi dojde, prostě
-  vrátíte robota na původní polohu před pohybem.
-* Nakonec udělejte test toho, že robot dorazil do cíle v bludišti. Například tak, že cílové místo bude také label,
-  akorát průhledný. Tzv. nášlapný kámen. V tomto případě testujte kolizi s tímto nášlapným kamenem.
+## Bonus: Ulož citáty zpět do souboru.
+Implementuje akci, po kliknutí na položku ``Uložit`` v menu ``Soubor`` uloží aktuálně načtené citáty do souboru.
+Pro výběr lokace, kam se citáty uloží, použijte standardní dialog pro uložení souboru.
 
-### Odevzdání domácího úkolu
+Zobrazení ukládacího dialogu je velmi podobné otevření souboru
+```java
+    int vysledek = vyberovyDialog.showSaveDialog(this);
+    if(vysledek == JFileChooser.APPROVE_OPTION) {
 
- Domácí úkol (složky s projekty) zabalte pomocí 7-Zipu pod jménem **Ukol09-Vase_Jmeno.7z**. (Případně lze použít prostý
- zip, například na Macu). Takto vytvořený archív nahrajte na Google Drive do složky Ukol09.
+    }
+```
 
-Vytvořte snímek obrazovky spuštěného programu a pochlubte se s ním v galerii na Facebooku.
+Do ```CitacniSluzba``` přidejte metodu, která skutečně uloží citáty do souboru. Nezapomeňte zachovat spravný formát dat. Pro uložení jednotlivých řádků využíjte metodu ```zapisRadkyDoSouboru``` ze třídy ```Pomocník```. Nezapomeňte že této metodě je potřeba předat seznam všech řádků, které chcete do souboru zapsat.
 
-Pokud byste chtěli odevzdat revizi úkolu (např. po opravě), zabalte ji a nahrajte ji na stejný Google Drive znovu, jen
-tentokrát se jménem **Ukol09-Vase_Jmeno-verze2.7z**.
