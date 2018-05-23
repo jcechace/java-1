@@ -7,7 +7,18 @@ Například si budete moci věimnout, že všechny metody pro zobrazení náhodn
 ## Náhodný citát od autora
 - Tlačítko po kliknuti zobrazí náhodný citát od stejného autora jako aktuálně zobrazený citát.
 
-### Tip
+### Tip 1
+Jistě víte, že k porovnávání slouží operátor == . Funguje však pouze pro primitivní hodnoty typu ``int``, ``double``, ``char``, etc...
+Objekty (například typy ``String``) je potřeba orovnávat jinak.
+
+```java
+public boolean jeJakub(String jmeno) {
+    bool jeJakub = jmeno.equals("Jakub"));
+    return jeJakub;
+}
+```
+
+### Tip 2
 Kromě klasického for cyklu existuje i speciální varianta pro procházení prvků v seznamech.
 
 ```java
